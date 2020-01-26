@@ -1,11 +1,11 @@
 import React from "react";
-import ExpendTypeList from "./components/ExpendTypeList.js";
+import AccountApp from "./components/AccountApp.js";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <ExpendTypeList />
+      <AccountApp />
     </div>
   );
 }

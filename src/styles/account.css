@@ -1,0 +1,40 @@
+.account-type-list-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.account-type-list-container .type-item {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 6px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.account-type-list-container .active {
+  color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.account-type-list-container .normal {
+  color: #333;
+  border-color: #d9d9d9;
+}
+
+.account-input-container .btn {
+  margin-top: 20px;
+}
+
+.account-list-container {
+  margin-top: 20px;
+}
+
+.account-list-container .list-item {
+  width: 50%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

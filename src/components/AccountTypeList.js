@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../styles/expendTypeList.css";
+import "../styles/account.css";
 
 const list = [
   {
@@ -20,20 +20,29 @@ const list = [
 ];
 
 class ExpendTypeList extends Component {
-  // constructor() {}
-
-  handleSelectType(type, e) {
-    console.log("我点击了");
-    console.log(type, e);
+  constructor() {
+    super()
+    this.state = {
+      currentIndex: -1
+    }
   }
+
+  handleSelectType(item,index) {
+    console.log(item)
+    this.setState({
+      currentIndex: index
+    })
+    this.props.getSelectType(item)
+  }
+
   render() {
     return (
-      <div className="list-container">
+      <div className="account-type-list-container">
         {list.map((item, index) => (
           <div
-            className="list-item"
+            className={`type-item ${index === this.state.currentIndex ? 'active' : 'normal'}`}
             key={index}
-            onClick={this.handleSelectType.bind(this)}
+            onClick={this.handleSelectType.bind(this,item,index)}
           >
             {item.label}
           </div>
