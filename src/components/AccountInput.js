@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import {addAccount} from '../api/api.js'
 import AccountTypeList from './AccountTypeList.js'
-import AccountList from './AccountList.js'
 
 class AccountInput extends Component {
   constructor() {
@@ -33,6 +33,15 @@ class AccountInput extends Component {
     this.setState({
       accountList: accountList
     })
+
+    const params = {
+      content: '',
+      money: this.state.money,
+      type: 'spending'
+    }
+    addAccount(params).then(res => {
+      alert('添加成功')
+    })
   }
 
   render() {
@@ -45,10 +54,6 @@ class AccountInput extends Component {
             <input onChange={this.handleInputChange.bind(this)} type="text" name="name" />
           </div> 
           <button className="btn" onClick={this.handleSubmit.bind(this)}>确定</button>
-        </div>
-       
-        <div className="account-list-container">
-          <AccountList accountList={this.state.accountList}/>
         </div>
       </div>
     )
